@@ -10,22 +10,27 @@
             color: #ff8c00; /* Laranja */
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            padding: 20px;
-            text-align: center;
-            background-image: url('LINK_DA_IMAGEM_DE_FUNDO'); /* Imagem de fundo */
+            padding: 0;
+            margin: 0;
+            background-image: url('https://www.mundorh.com.br/wp-content/uploads/2023/03/Xadrez-o-jogo-que-desenvolve-o-cerebro-Mundo-RH.webp'); /* Imagem de fundo */
             background-size: cover; /* Cobre toda a área */
             background-position: center; /* Centraliza a imagem */
+            height: 100vh; /* Altura total da viewport */
+            display: flex; /* Flexbox para centralização */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+        }
+        .content {
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente para o texto */
+            border-radius: 10px; /* Bordas arredondadas */
+            padding: 40px;
+            width: 80%; /* Largura do quadro */
+            max-width: 600px; /* Largura máxima */
+            text-align: center; /* Centraliza o texto dentro do quadro */
         }
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
-        }
-        .content {
-            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para o texto */
-            border-radius: 10px; /* Bordas arredondadas */
-            padding: 20px;
-            display: inline-block; /* Permite o centralização do conteúdo */
-            margin: auto;
         }
         p {
             font-size: 1.2em;
