@@ -3,73 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite para a Festa da Giovana</title>
+    <title>Jantar DATE DE SEXTA-FEIRA</title>
     <style>
         body {
-            background-color: #ffffff; /* Fundo branco */
-            color: #000000; /* Texto preto */
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            padding: 0;
-            margin: 0;
-            min-height: 100vh; /* Alterado para min-height */
-            display: flex; /* Flexbox para centralização */
-            justify-content: center; /* Centraliza horizontalmente */
-            align-items: center; /* Centraliza verticalmente */
+            background-color: #f8f9fa;
+            text-align: center;
+            padding: 20px;
         }
-        .content {
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco para o texto */
-            border-radius: 10px; /* Bordas arredondadas */
-            padding: 40px;
-            width: 80%; /* Largura do quadro */
-            max-width: 600px; /* Largura máxima */
-            text-align: center; /* Centraliza o texto dentro do quadro */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-            margin-top: 20px; /* Adiciona espaço no topo */
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ff69b4; /* Rosa claro */
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            color: #fff; /* Texto branco */
-            background-color: #ff8c00; /* Laranja */
+        .button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 15px 32px;
+            font-size: 16px;
+            margin: 20px;
             border: none;
+            cursor: pointer;
             border-radius: 5px;
-            text-decoration: none;
+        }
+        .button:hover {
+            background-color: #4cae4c;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
             margin-top: 20px;
         }
-        .btn:hover {
-            background-color: #e07b00; /* Laranja escuro ao passar o mouse */
+        .choice {
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        .choice:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <h1>🎉 Você está convidado para a Festa da Giovana! 🎉</h1>
-        <p>
-            Já pensou em assumir outra personalidade? Que tal dar vida a ela em uma tarde cheia de diversão? A Giovana preparou uma festa exatamente pra isso!
-        </p>
-        <p>
-            Vamos juntos aproveitar jogos de tabuleiro, cartas, UNO e muito mais! É hora de competir, rir e criar memórias inesquecíveis com a família!
-        </p>
-        <p>
-            Lembre-se de trazer sua melhor energia e estar pronto para curtir até o último minuto. Estamos super animados para ter você aqui!
-        </p>
-        <p>
-            📍 Endereço: Rua Domiziano Rossi, 596, São Paulo, Brazil<br>
-            🗓 Data: 01 de dezembro<br>
-            ⏰ Horário: Às 13h
-        </p>
-        <a href="https://docs.google.com/forms/d/1ulDUhNkvdzsGWY0NSRDEE9VBqokH4HCeGxD2xjJgRzA/edit" class="btn">Confirmar Presença</a>
+    <div id="page1">
+        <h1>Bem-vindo ao Melhor Date da Sua Vida!</h1>
+        <p>Escolha a opção abaixo para começar:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #ff6347;" onclick="showPage('page2')">Iniciar Jogo</div>
+        </div>
     </div>
+
+    <div id="page2" style="display:none;">
+        <h1>Quem será seu acompanhante no Jantar?</h1>
+        <p>Escolha abaixo:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #8e44ad;" onclick="goToPage('guilherme')">Guilherme</div>
+            <div class="choice" style="background-color: #3498db;" onclick="goToPage('outro')">Outro</div>
+        </div>
+    </div>
+
+    <div id="page3" style="display:none;">
+        <h1>Escolha o Prato Principal</h1>
+        <p>Escolha abaixo:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #e67e22;" onclick="showCuriosity('miojo')">Miojo</div>
+            <div class="choice" style="background-color: #f39c12;" onclick="showCuriosity('macarrao')">Macarrão</div>
+            <div class="choice" style="background-color: #e74c3c;" onclick="showCuriosity('lasanha')">Lasanha</div>
+        </div>
+    </div>
+
+    <div id="page4" style="display:none;">
+        <h1>Escolha a Bebida</h1>
+        <p>Escolha abaixo:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #1abc9c;" onclick="showCuriosity('guarana')">Guaraná</div>
+            <div class="choice" style="background-color: #16a085;" onclick="showCuriosity('vinho')">Vinho</div>
+            <div class="choice" style="background-color: #2ecc71;" onclick="showCuriosity('suco')">Suco de Laranja</div>
+        </div>
+    </div>
+
+    <div id="page5" style="display:none;">
+        <h1>Escolha a Sobremesa</h1>
+        <p>Escolha abaixo:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #9b59b6;" onclick="showCuriosity('doceDeLeite')">Doce de Leite</div>
+            <div class="choice" style="background-color: #8e44ad;" onclick="showCuriosity('nutella')">Nutella</div>
+            <div class="choice" style="background-color: #f1c40f;" onclick="showCuriosity('frutas')">Frutas</div>
+        </div>
+    </div>
+
+    <div id="finalPage" style="display:none;">
+        <h1>Instruções de Etiqueta do Jantar</h1>
+        <p>Agora que você fez todas as escolhas, aqui vão as instruções de etiqueta de forma bem brincalhona:</p>
+        <p><b>1. Lamba sempre a colher e chupe os dedos!</b></p>
+        <p><b>2. Come quem tem fome!</b></p>
+        <p><b>3. Não se esqueça de rir e se divertir!</b></p>
+        <button class="button" onclick="showPage('page1')">Voltar para o Início</button>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Esconde todas as páginas
+            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'finalPage'];
+            pages.forEach(page => document.getElementById(page).style.display = 'none');
+            
+            // Exibe a página correta
+            document.getElementById(pageId).style.display = 'block';
+        }
+
+        function goToPage(option) {
+            if (option === 'guilherme') {
+                showPage('page3'); // Vai para o prato principal
+            } else {
+                alert('Não fala mais comigo! 😡');
+                showPage('page1'); // Volta para a página inicial
+            }
+        }
+
+        function showCuriosity(choice) {
+            let curiosity = '';
+            if (choice === 'miojo') {
+                curiosity = 'Sabia que o Miojo foi criado como uma forma de combater a fome no Japão após a Segunda Guerra Mundial?';
+            } else if (choice === 'macarrao') {
+                curiosity = 'O macarrão é um alimento básico em muitas culturas e foi introduzido na Itália pelos chineses!';
+            } else if (choice === 'lasanha') {
+                curiosity = 'A lasanha tem suas origens na Roma antiga, mas o prato como conhecemos hoje foi aprimorado na Itália!';
+            } else if (choice === 'guarana') {
+                curiosity = 'O Guaraná é uma planta nativa da Amazônia, conhecida por suas propriedades energéticas!';
+            } else if (choice === 'vinho') {
+                curiosity = 'O vinho é uma das bebidas mais antigas do mundo, com mais de 8 mil anos de história!';
+            } else if (choice === 'suco') {
+                curiosity = 'O suco de laranja é rico em vitamina C, essencial para o sistema imunológico!';
+            } else if (choice === 'doceDeLeite') {
+                curiosity = 'O doce de leite é popular em várias culturas, com diferentes variações e receitas!';
+            } else if (choice === 'nutella') {
+                curiosity = 'A Nutella foi criada na Itália na década de 1960, tornando-se um sucesso mundial!';
+            } else if (choice === 'frutas') {
+                curiosity = 'As frutas são ricas em vitaminas e antioxidantes, importantes para a saúde!';
+            }
+            alert(curiosity);
+            if (choice === 'frutas') {
+                showPage('finalPage'); // Vai para a página final de etiqueta
+            } else {
+                showPage('page' + (parseInt(choice.replace(/\D/g, '')) + 1)); // Avança para a próxima página
+            }
+        }
+
+        // Inicializa o jogo na página 1
+        showPage('page1');
+    </script>
 </body>
 </html>
