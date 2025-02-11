@@ -7,7 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+            background-color: #2c3e50;
+            color: white;
             text-align: center;
             padding: 20px;
         }
@@ -45,6 +46,14 @@
         .choice:hover {
             opacity: 0.8;
         }
+        .curiosity-page {
+            background-color: #34495e;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        .emoji {
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -69,9 +78,9 @@
         <h1>Escolha o Prato Principal</h1>
         <p>Escolha abaixo:</p>
         <div class="choices">
-            <div class="choice" style="background-color: #e67e22;" onclick="showCuriosity('miojo')">Miojo</div>
-            <div class="choice" style="background-color: #f39c12;" onclick="showCuriosity('macarrao')">Macarrão</div>
-            <div class="choice" style="background-color: #e74c3c;" onclick="showCuriosity('lasanha')">Lasanha</div>
+            <div class="choice" style="background-color: #e67e22;" onclick="showCuriosity('miojo')">Miojo 🍜</div>
+            <div class="choice" style="background-color: #f39c12;" onclick="showCuriosity('macarrao')">Macarrão 🍝</div>
+            <div class="choice" style="background-color: #e74c3c;" onclick="showCuriosity('lasanha')">Lasanha 🍽️</div>
         </div>
     </div>
 
@@ -79,9 +88,9 @@
         <h1>Escolha a Bebida</h1>
         <p>Escolha abaixo:</p>
         <div class="choices">
-            <div class="choice" style="background-color: #1abc9c;" onclick="showCuriosity('guarana')">Guaraná</div>
-            <div class="choice" style="background-color: #16a085;" onclick="showCuriosity('vinho')">Vinho</div>
-            <div class="choice" style="background-color: #2ecc71;" onclick="showCuriosity('suco')">Suco de Laranja</div>
+            <div class="choice" style="background-color: #1abc9c;" onclick="showCuriosity('guarana')">Guaraná 🥤</div>
+            <div class="choice" style="background-color: #16a085;" onclick="showCuriosity('vinho')">Vinho 🍷</div>
+            <div class="choice" style="background-color: #2ecc71;" onclick="showCuriosity('suco')">Suco de Laranja 🍊</div>
         </div>
     </div>
 
@@ -89,10 +98,16 @@
         <h1>Escolha a Sobremesa</h1>
         <p>Escolha abaixo:</p>
         <div class="choices">
-            <div class="choice" style="background-color: #9b59b6;" onclick="showCuriosity('doceDeLeite')">Doce de Leite</div>
-            <div class="choice" style="background-color: #8e44ad;" onclick="showCuriosity('nutella')">Nutella</div>
-            <div class="choice" style="background-color: #f1c40f;" onclick="showCuriosity('frutas')">Frutas</div>
+            <div class="choice" style="background-color: #9b59b6;" onclick="showCuriosity('doceDeLeite')">Doce de Leite 🍮</div>
+            <div class="choice" style="background-color: #8e44ad;" onclick="showCuriosity('nutella')">Nutella 🍫</div>
+            <div class="choice" style="background-color: #f1c40f;" onclick="showCuriosity('frutas')">Frutas 🍓🍍</div>
         </div>
+    </div>
+
+    <div id="curiosityPage" style="display:none;" class="curiosity-page">
+        <h1>Curiosidade sobre a comida escolhida</h1>
+        <p id="curiosityText"></p>
+        <button class="button" onclick="nextChoice()">Avançar para a próxima escolha</button>
     </div>
 
     <div id="finalPage" style="display:none;">
@@ -105,9 +120,11 @@
     </div>
 
     <script>
+        let currentPage = 3; // Inicializa na página de prato principal
+
         function showPage(pageId) {
             // Esconde todas as páginas
-            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'finalPage'];
+            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'curiosityPage', 'finalPage'];
             pages.forEach(page => document.getElementById(page).style.display = 'none');
             
             // Exibe a página correta
@@ -124,31 +141,41 @@
         }
 
         function showCuriosity(choice) {
-            let curiosity = '';
+            let curiosityText = '';
             if (choice === 'miojo') {
-                curiosity = 'Sabia que o Miojo foi criado como uma forma de combater a fome no Japão após a Segunda Guerra Mundial?';
+                curiosityText = 'Sabia que o Miojo foi criado como uma forma de combater a fome no Japão após a Segunda Guerra Mundial?';
             } else if (choice === 'macarrao') {
-                curiosity = 'O macarrão é um alimento básico em muitas culturas e foi introduzido na Itália pelos chineses!';
+                curiosityText = 'O macarrão é um alimento básico em muitas culturas e foi introduzido na Itália pelos chineses!';
             } else if (choice === 'lasanha') {
-                curiosity = 'A lasanha tem suas origens na Roma antiga, mas o prato como conhecemos hoje foi aprimorado na Itália!';
+                curiosityText = 'A lasanha tem suas origens na Roma antiga, mas o prato como conhecemos hoje foi aprimorado na Itália!';
             } else if (choice === 'guarana') {
-                curiosity = 'O Guaraná é uma planta nativa da Amazônia, conhecida por suas propriedades energéticas!';
+                curiosityText = 'O Guaraná é uma planta nativa da Amazônia, conhecida por suas propriedades energéticas!';
             } else if (choice === 'vinho') {
-                curiosity = 'O vinho é uma das bebidas mais antigas do mundo, com mais de 8 mil anos de história!';
+                curiosityText = 'O vinho é uma das bebidas mais antigas do mundo, com mais de 8 mil anos de história!';
             } else if (choice === 'suco') {
-                curiosity = 'O suco de laranja é rico em vitamina C, essencial para o sistema imunológico!';
+                curiosityText = 'O suco de laranja é rico em vitamina C, essencial para o sistema imunológico!';
             } else if (choice === 'doceDeLeite') {
-                curiosity = 'O doce de leite é popular em várias culturas, com diferentes variações e receitas!';
+                curiosityText = 'O doce de leite é popular em várias culturas, com diferentes variações e receitas!';
             } else if (choice === 'nutella') {
-                curiosity = 'A Nutella foi criada na Itália na década de 1960, tornando-se um sucesso mundial!';
+                curiosityText = 'A Nutella foi criada na Itália na década de 1960, tornando-se um sucesso mundial!';
             } else if (choice === 'frutas') {
-                curiosity = 'As frutas são ricas em vitaminas e antioxidantes, importantes para a saúde!';
+                curiosityText = 'As frutas são ricas em vitaminas e antioxidantes, importantes para a saúde!';
             }
-            alert(curiosity);
-            if (choice === 'frutas') {
-                showPage('finalPage'); // Vai para a página final de etiqueta
-            } else {
-                showPage('page' + (parseInt(choice.replace(/\D/g, '')) + 1)); // Avança para a próxima página
+
+            document.getElementById('curiosityText').innerText = curiosityText;
+            showPage('curiosityPage');
+        }
+
+        function nextChoice() {
+            if (currentPage === 3) {
+                showPage('page4'); // Avança para Bebida
+                currentPage = 4;
+            } else if (currentPage === 4) {
+                showPage('page5'); // Avança para Sobremesa
+                currentPage = 5;
+            } else if (currentPage === 5) {
+                showPage('finalPage'); // Avança para Final
+                currentPage = 6;
             }
         }
 
