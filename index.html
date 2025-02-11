@@ -85,16 +85,36 @@
     </div>
 
     <div id="page4" style="display:none;">
-        <h1>Escolha a Bebida</h1>
+        <h1>Escolha o Acompanhamento</h1>
         <p>Escolha abaixo:</p>
         <div class="choices">
-            <div class="choice" style="background-color: #1abc9c;" onclick="showCuriosity('guarana')">Guaraná 🥤</div>
-            <div class="choice" style="background-color: #16a085;" onclick="showCuriosity('vinho')">Vinho 🍷</div>
-            <div class="choice" style="background-color: #2ecc71;" onclick="showCuriosity('suco')">Suco de Laranja 🍊</div>
+            <div class="choice" style="background-color: #1abc9c;" onclick="showCuriosity('carneNobre')">Carne Nobre 🥩</div>
+            <div class="choice" style="background-color: #16a085;" onclick="showCuriosity('frango')">Frango 🍗</div>
+            <div class="choice" style="background-color: #2ecc71;" onclick="showCuriosity('surpresa')">Surpresa 🎉</div>
         </div>
     </div>
 
     <div id="page5" style="display:none;">
+        <h1>Escolha a Bebida</h1>
+        <p>Escolha abaixo:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #9b59b6;" onclick="showCuriosity('guarana')">Guaraná 🥤</div>
+            <div class="choice" style="background-color: #8e44ad;" onclick="showCuriosity('vinho')">Vinho 🍷</div>
+            <div class="choice" style="background-color: #f1c40f;" onclick="showCuriosity('suco')">Suco de Laranja 🍊</div>
+        </div>
+    </div>
+
+    <div id="page6" style="display:none;">
+        <h1>Escolha a Entrada</h1>
+        <p>Escolha abaixo:</p>
+        <div class="choices">
+            <div class="choice" style="background-color: #f39c12;" onclick="showCuriosity('torradas')">Torradas 🍞</div>
+            <div class="choice" style="background-color: #e67e22;" onclick="showCuriosity('petiscos')">Petiscos 🧀</div>
+            <div class="choice" style="background-color: #e74c3c;" onclick="showCuriosity('queijos')">Queijos 🧀</div>
+        </div>
+    </div>
+
+    <div id="page7" style="display:none;">
         <h1>Escolha a Sobremesa</h1>
         <p>Escolha abaixo:</p>
         <div class="choices">
@@ -114,8 +134,10 @@
         <h1>Instruções de Etiqueta do Jantar</h1>
         <p>Agora que você fez todas as escolhas, aqui vão as instruções de etiqueta de forma bem brincalhona:</p>
         <p><b>1. Lamba sempre a colher e chupe os dedos!</b></p>
-        <p><b>2. Come quem tem fome!</b></p>
-        <p><b>3. Não se esqueça de rir e se divertir!</b></p>
+        <p><b>2. Come quem tem fome! Não importa a bagunça!</b></p>
+        <p><b>3. Se alguém perguntar 'Tá bom?', responda com um 'Tá ótimo!' e continue devorando a comida.</b></p>
+        <p><b>4. Não se esqueça de levantar e fazer um brinde com o copo quando alguém disser 'Saúde!'</b></p>
+        <p><b>5. Nunca, em hipótese alguma, faça careta enquanto mastiga.</b></p>
         <button class="button" onclick="showPage('page1')">Voltar para o Início</button>
     </div>
 
@@ -124,7 +146,7 @@
 
         function showPage(pageId) {
             // Esconde todas as páginas
-            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'curiosityPage', 'finalPage'];
+            const pages = ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'curiosityPage', 'finalPage'];
             pages.forEach(page => document.getElementById(page).style.display = 'none');
             
             // Exibe a página correta
@@ -145,42 +167,4 @@
             if (choice === 'miojo') {
                 curiosityText = 'Sabia que o Miojo foi criado como uma forma de combater a fome no Japão após a Segunda Guerra Mundial?';
             } else if (choice === 'macarrao') {
-                curiosityText = 'O macarrão é um alimento básico em muitas culturas e foi introduzido na Itália pelos chineses!';
-            } else if (choice === 'lasanha') {
-                curiosityText = 'A lasanha tem suas origens na Roma antiga, mas o prato como conhecemos hoje foi aprimorado na Itália!';
-            } else if (choice === 'guarana') {
-                curiosityText = 'O Guaraná é uma planta nativa da Amazônia, conhecida por suas propriedades energéticas!';
-            } else if (choice === 'vinho') {
-                curiosityText = 'O vinho é uma das bebidas mais antigas do mundo, com mais de 8 mil anos de história!';
-            } else if (choice === 'suco') {
-                curiosityText = 'O suco de laranja é rico em vitamina C, essencial para o sistema imunológico!';
-            } else if (choice === 'doceDeLeite') {
-                curiosityText = 'O doce de leite é popular em várias culturas, com diferentes variações e receitas!';
-            } else if (choice === 'nutella') {
-                curiosityText = 'A Nutella foi criada na Itália na década de 1960, tornando-se um sucesso mundial!';
-            } else if (choice === 'frutas') {
-                curiosityText = 'As frutas são ricas em vitaminas e antioxidantes, importantes para a saúde!';
-            }
-
-            document.getElementById('curiosityText').innerText = curiosityText;
-            showPage('curiosityPage');
-        }
-
-        function nextChoice() {
-            if (currentPage === 3) {
-                showPage('page4'); // Avança para Bebida
-                currentPage = 4;
-            } else if (currentPage === 4) {
-                showPage('page5'); // Avança para Sobremesa
-                currentPage = 5;
-            } else if (currentPage === 5) {
-                showPage('finalPage'); // Avança para Final
-                currentPage = 6;
-            }
-        }
-
-        // Inicializa o jogo na página 1
-        showPage('page1');
-    </script>
-</body>
-</html>
+                curiosityText = 'O macarrão é um alimento básico em muitas culturas e foi
