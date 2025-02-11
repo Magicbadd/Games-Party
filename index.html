@@ -167,4 +167,46 @@
             if (choice === 'miojo') {
                 curiosityText = 'Sabia que o Miojo foi criado como uma forma de combater a fome no Japão após a Segunda Guerra Mundial?';
             } else if (choice === 'macarrao') {
-                curiosityText = 'O macarrão é um alimento básico em muitas culturas e foi
+                curiosityText = 'O macarrão é um alimento básico em muitas culturas e foi introduzido na Europa pelos chineses!';
+            } else if (choice === 'lasanha') {
+                curiosityText = 'Lasanha é um prato tão delicioso que até o Garfield não resiste!';
+            } else if (choice === 'carneNobre') {
+                curiosityText = 'A carne nobre é... nobre! Sabe aquele pedaço que derrete na boca? Esse é o segredo!';
+            } else if (choice === 'frango') {
+                curiosityText = 'Frango é uma delícia e já foi o prato preferido dos faraós no Egito! 🐔';
+            } else if (choice === 'surpresa') {
+                curiosityText = 'A surpresa... é você quem vai descobrir! 🎉';
+            } else if (choice === 'guarana') {
+                curiosityText = 'Guaraná é tão energizante que vai te deixar pulando igual a um canguru! 🦘';
+            } else if (choice === 'vinho') {
+                curiosityText = 'O vinho é um elixir da vida! Beber com moderação é o segredo de uma noite feliz. 🍷';
+            } else if (choice === 'suco') {
+                curiosityText = 'O suco de laranja é uma explosão de vitamina C. Perfeito para manter a saúde em alta! 🍊';
+            } else if (choice === 'torradas') {
+                curiosityText = 'Torradas... aquele amigo crocante que nunca te decepciona. 🍞';
+            } else if (choice === 'petiscos') {
+                curiosityText = 'Petiscos são para os amantes de uma boa conversinha. Amigo de todo happy hour! 🧀';
+            } else if (choice === 'queijos') {
+                curiosityText = 'O queijo é o herói dos petiscos. Serve como aperitivo, entrada e até sobremesa! 🧀';
+            } else if (choice === 'doceDeLeite') {
+                curiosityText = 'Doce de leite... um pedaço de felicidade em cada colherada! 🍮';
+            } else if (choice === 'nutella') {
+                curiosityText = 'Nutella, a razão de tantos sorrisos ao redor do mundo. 🍫';
+            } else if (choice === 'frutas') {
+                curiosityText = 'Frutas frescas, a escolha perfeita para dar aquele toque leve e saudável ao final! 🍓🍍';
+            }
+            document.getElementById('curiosityText').innerHTML = curiosityText;
+            showPage('curiosityPage');
+        }
+
+        function nextChoice() {
+            if (currentPage === 6) {
+                showPage('finalPage');
+            } else {
+                currentPage++;
+                showPage('page' + currentPage);
+            }
+        }
+    </script>
+</body>
+</html>
