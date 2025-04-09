@@ -1,124 +1,145 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gio's Fashion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      font-family: 'Open Sans', sans-serif;
+      font-family: 'Playfair Display', serif;
       background-color: #fefefe;
       color: #222;
-      line-height: 1.6;
     }
-
     header {
-      background: #fff;
-      padding: 2rem;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
+      background-color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
-
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      color: #000;
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
       letter-spacing: 2px;
     }
-
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #444;
+      font-size: 1.1rem;
+    }
+    nav a:hover {
+      color: #c94f7c;
+    }
     .hero {
-      background-image: url('https://images.unsplash.com/photo-1520975698519-59c92f3f2962?auto=format&fit=crop&w=1950&q=80');
+      background-image: url('https://images.unsplash.com/photo-1612423284934-ffcfc398e7e7?auto=format&fit=crop&w=1500&q=80');
+      height: 90vh;
       background-size: cover;
       background-position: center;
-      height: 90vh;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       color: white;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      text-align: center;
-      padding: 2rem;
+      text-shadow: 0 0 10px #000;
     }
-
-    .hero h2 {
-      font-size: 3rem;
-      max-width: 800px;
+    .hero h1 {
+      font-size: 4rem;
     }
-
     .section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .section h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      padding: 60px 20px;
       text-align: center;
     }
-
-    .gallery {
+    .section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+    .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 20px;
     }
-
-    .gallery img {
+    .item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .item img {
       width: 100%;
-      height: 350px;
+      height: 400px;
       object-fit: cover;
-      border-radius: 10px;
-      transition: transform 0.3s;
+      transition: 0.3s;
     }
-
-    .gallery img:hover {
+    .item img:hover {
       transform: scale(1.05);
     }
-
     footer {
       text-align: center;
-      padding: 2rem;
-      background: #000;
-      color: #fff;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">Gio’s</div>
+    <div class="logo">Gio's</div>
+    <nav>
+      <a href="#colecoes">Coleções</a>
+      <a href="#promocoes">Promoções</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <h2>Vestidos que expressam elegância, força e beleza</h2>
+    <h1>Vestidos com elegância atemporal</h1>
   </section>
 
-  <section class="section">
-    <h3>Coleções</h3>
-    <div class="gallery">
-      <img src="https://images.unsplash.com/photo-1584467735871-b2de61f2bc5c?auto=format&fit=crop&w=800&q=80" alt="Vestido 1">
-      <img src="https://images.unsplash.com/photo-1603252109361-96a0ef0b9897?auto=format&fit=crop&w=800&q=80" alt="Vestido 2">
-      <img src="https://images.unsplash.com/photo-1618220179428-22790fbc33c3?auto=format&fit=crop&w=800&q=80" alt="Vestido 3">
-      <img src="https://images.unsplash.com/photo-1618354691326-c85b2d3fc03b?auto=format&fit=crop&w=800&q=80" alt="Vestido 4">
+  <section id="colecoes" class="section">
+    <h2>Coleções</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1618220021808-c5d1efc07b95?auto=format&fit=crop&w=800&q=80" alt="Vestido 1">
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1604881991720-d13c803a7e2c?auto=format&fit=crop&w=800&q=80" alt="Vestido 2">
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716b?auto=format&fit=crop&w=800&q=80" alt="Vestido 3">
+      </div>
     </div>
   </section>
 
+  <section id="promocoes" class="section" style="background-color: #f9f9f9;">
+    <h2>Promoções</h2>
+    <div class="grid">
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Promoção 1">
+      </div>
+      <div class="item">
+        <img src="https://images.unsplash.com/photo-1542068829-1115f7259450?auto=format&fit=crop&w=800&q=80" alt="Promoção 2">
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="section">
+    <h2>Contato</h2>
+    <p>Em breve loja online. Para parcerias: <strong>contato@giosfashion.com</strong></p>
+  </section>
+
   <footer>
-    © 2025 Gio’s - Todos os direitos reservados
+    © 2025 Gio’s Fashion. Todos os direitos reservados.
   </footer>
 
 </body>
