@@ -1,146 +1,67 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gio's Fashion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: #fefefe;
-      color: #222;
-    }
-    header {
-      background-color: white;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .logo {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #444;
-      font-size: 1.1rem;
-    }
-    nav a:hover {
-      color: #c94f7c;
-    }
-    .hero {
-      background-image: url('https://images.unsplash.com/photo-1612423284934-ffcfc398e7e7?auto=format&fit=crop&w=1500&q=80');
-      height: 90vh;
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 0 0 10px #000;
-    }
-    .hero h1 {
-      font-size: 4rem;
-    }
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      padding: 0 20px;
-    }
-    .item {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .item img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      transition: 0.3s;
-    }
-    .item img:hover {
-      transform: scale(1.05);
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-  </style>
-</head>
-<body>
+import React from "react";
 
-  <header>
-    <div class="logo">Gio's</div>
-    <nav>
-      <a href="#colecoes">Coleções</a>
-      <a href="#promocoes">Promoções</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+export default function GiosFashion() {
+  return (
+    <div className="min-h-screen bg-pink-50 font-sans text-gray-800">
+      {/* Cabeçalho */}
+      <header className="bg-white shadow-md py-4 px-8 flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-pink-600">Gio's Fashion</h1>
+        <nav className="space-x-6 text-pink-700">
+          <a href="#colecoes" className="hover:underline">Coleções</a>
+          <a href="#estacoes" className="hover:underline">Estações</a>
+          <a href="#promocoes" className="hover:underline">Promoções</a>
+        </nav>
+      </header>
 
-  <section class="hero">
-    <h1>Vestidos com elegância atemporal</h1>
-  </section>
+      {/* Banner principal */}
+      <section className="relative bg-pink-200 h-[400px] flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold text-pink-800 mb-4">Vestidos Femininos 2025</h2>
+          <p className="text-lg text-pink-900">Estilo, elegância e tecnologia em cada detalhe</p>
+        </div>
+      </section>
 
-  <section id="colecoes" class="section">
-    <h2>Coleções</h2>
-    <div class="grid">
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1618220021808-c5d1efc07b95?auto=format&fit=crop&w=800&q=80" alt="Vestido 1">
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1604881991720-d13c803a7e2c?auto=format&fit=crop&w=800&q=80" alt="Vestido 2">
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1542060748-10c28b62716b?auto=format&fit=crop&w=800&q=80" alt="Vestido 3">
-      </div>
+      {/* Seções de destaques */}
+      <section className="py-12 px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1520975918312-3c6c400b0f89"
+            alt="Coleção Primavera"
+            className="w-full h-64 object-cover"
+          />
+          <div className="p-4">
+            <h3 className="text-xl font-semibold text-pink-700">Coleção Primavera</h3>
+            <p className="text-sm mt-2">Descubra os vestidos mais leves e florais da temporada.</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1542062703-3cd7c1e0ec1a"
+            alt="Estação Verão"
+            className="w-full h-64 object-cover"
+          />
+          <div className="p-4">
+            <h3 className="text-xl font-semibold text-pink-700">Estação Verão</h3>
+            <p className="text-sm mt-2">Modelos frescos e coloridos para os dias mais quentes.</p>
+          </div>
+        </div>
+        <div className="bg-white rounded-2xl shadow-md overflow-hidden">
+          <img
+            src="https://images.unsplash.com/photo-1514997130083-30e4085f9a49"
+            alt="Ofertas Especiais"
+            className="w-full h-64 object-cover"
+          />
+          <div className="p-4">
+            <h3 className="text-xl font-semibold text-pink-700">Ofertas Especiais</h3>
+            <p className="text-sm mt-2">Aproveite os melhores preços da nossa coleção anterior.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Rodapé */}
+      <footer className="bg-white py-6 text-center text-sm text-pink-600">
+        © 2025 Gio's Fashion. Todos os direitos reservados.
+      </footer>
     </div>
-  </section>
-
-  <section id="promocoes" class="section" style="background-color: #f9f9f9;">
-    <h2>Promoções</h2>
-    <div class="grid">
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80" alt="Promoção 1">
-      </div>
-      <div class="item">
-        <img src="https://images.unsplash.com/photo-1542068829-1115f7259450?auto=format&fit=crop&w=800&q=80" alt="Promoção 2">
-      </div>
-    </div>
-  </section>
-
-  <section id="contato" class="section">
-    <h2>Contato</h2>
-    <p>Em breve loja online. Para parcerias: <strong>contato@giosfashion.com</strong></p>
-  </section>
-
-  <footer>
-    © 2025 Gio’s Fashion. Todos os direitos reservados.
-  </footer>
-
-</body>
-</html>
+  );
+}
