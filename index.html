@@ -1,162 +1,125 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jantar Date de Sexta-feira</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 50px auto;
-            text-align: center;
-        }
-        button {
-            background-color: #ff4081;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 20px;
-            font-size: 18px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #f50057;
-        }
-        .header {
-            font-size: 36px;
-            margin-bottom: 30px;
-        }
-        .options {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        .option {
-            background-color: #424242;
-            padding: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .option:hover {
-            background-color: #f50057;
-        }
-        .curiosity {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gio's Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fefefe;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #fff;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #000;
+      letter-spacing: 2px;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1520975698519-59c92f3f2962?auto=format&fit=crop&w=1950&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      max-width: 800px;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+      color: #fff;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <h1 class="header">Bem-vinda ao Melhor Date da Sua Vida!</h1>
-        <p class="curiosity">Ao entrar, me faça sentir como a pessoa mais sortuda do mundo com aquele sorriso deslumbrante que só você tem. 💖 Olhe para mim com os olhos brilhando de carinho, e me lembre de como sou afortunado por ter você ao meu lado. Cada segundo com você é mais encantador que o anterior. 😍</p>
-        <button onclick="nextPage('acompanhamento')">Avançar para a Escolha do Acompanhamento</button>
-    </div>
+  <header>
+    <div class="logo">Gio’s</div>
+  </header>
 
-    <div class="container" id="acompanhamento" style="display:none;">
-        <h1 class="header">Escolha o Acompanhamento</h1>
-        <div class="options">
-            <div class="option" onclick="nextPage('entrada')">
-                Carne Nobre 🍖
-            </div>
-            <div class="option" onclick="nextPage('entrada')">
-                Frango 🍗
-            </div>
-            <div class="option" onclick="nextPage('entrada')">
-                Surpresa 🎉
-            </div>
-        </div>
-        <p class="curiosity">Aqui, você tem três escolhas maravilhosas: Carne nobre, frango ou surpresa (spoiler: surpresa sou eu te surpreendendo a cada dia). 🍖🍗🎉 Não importa o que você escolher, saiba que tudo fica mais gostoso quando você está por perto. "Carne nobre? Mas o meu coração, esse é o mais nobre de todos!" 😘</p>
-    </div>
+  <section class="hero">
+    <h2>Vestidos que expressam elegância, força e beleza</h2>
+  </section>
 
-    <div class="container" id="entrada" style="display:none;">
-        <h1 class="header">Escolha a Entrada</h1>
-        <div class="options">
-            <div class="option" onclick="nextPage('prato')">
-                Torradas 🧀
-            </div>
-            <div class="option" onclick="nextPage('prato')">
-                Petiscos 🍤
-            </div>
-            <div class="option" onclick="nextPage('prato')">
-                Queijos 🧀
-            </div>
-        </div>
-        <p class="curiosity">Escolha entre torradas crocantes, petiscos ou queijos. Mas, antes de mais nada, me dê uma olhada de "uau" e fale algo como: "Você já é a entrada mais gostosa da minha vida!" 😍 Aproveite para dar aquele toque de glamour, porque quem não ama uma boa torrada, assim como um bom abraço de quem a ama? (Eu!) 🧀</p>
+  <section class="section">
+    <h3>Coleções</h3>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1584467735871-b2de61f2bc5c?auto=format&fit=crop&w=800&q=80" alt="Vestido 1">
+      <img src="https://images.unsplash.com/photo-1603252109361-96a0ef0b9897?auto=format&fit=crop&w=800&q=80" alt="Vestido 2">
+      <img src="https://images.unsplash.com/photo-1618220179428-22790fbc33c3?auto=format&fit=crop&w=800&q=80" alt="Vestido 3">
+      <img src="https://images.unsplash.com/photo-1618354691326-c85b2d3fc03b?auto=format&fit=crop&w=800&q=80" alt="Vestido 4">
     </div>
+  </section>
 
-    <div class="container" id="prato" style="display:none;">
-        <h1 class="header">Escolha o Prato Principal</h1>
-        <div class="options">
-            <div class="option" onclick="nextPage('bebida')">
-                Miojo 🍜
-            </div>
-            <div class="option" onclick="nextPage('bebida')">
-                Macarrão 🍝
-            </div>
-            <div class="option" onclick="nextPage('bebida')">
-                Lasanha 🍽️
-            </div>
-        </div>
-        <p class="curiosity">Se a opção for Miojo, não tem problema, porque nada nessa vida é mais rápido de fazer do que meu amor por você. "Miojo na panela, mas o meu coração ferve por você!" 🍜 Macarrão, um clássico, que nem você! "Com você ao meu lado, até o macarrão vira prato gourmet!" 🍝 Lasanha, meu Deus, o que posso dizer? Você é o molho perfeito que completa esse prato (e minha vida)! "Você é o recheio que dá sabor à minha existência!" 🍽️</p>
-    </div>
-
-    <div class="container" id="bebida" style="display:none;">
-        <h1 class="header">Escolha a Bebida</h1>
-        <div class="options">
-            <div class="option" onclick="nextPage('sobremesa')">
-                Guaraná 🥤
-            </div>
-            <div class="option" onclick="nextPage('sobremesa')">
-                Vinho 🍷
-            </div>
-            <div class="option" onclick="nextPage('sobremesa')">
-                Suco de Laranja 🍊
-            </div>
-        </div>
-        <p class="curiosity">Guaraná, vinho ou suco? Seja qual for a escolha, comigo ao seu lado, tudo fica mais leve e divertido. "Com você, até o suco de laranja vira champagne!" 🥂 Mas, sinceramente, o que eu realmente quero é brindar ao nosso amor, que é mais doce do que qualquer bebida! "Você é a única bebida que eu quero em minha vida." 🍷</p>
-    </div>
-
-    <div class="container" id="sobremesa" style="display:none;">
-        <h1 class="header">Escolha a Sobremesa</h1>
-        <div class="options">
-            <div class="option" onclick="nextPage('ir embora')">
-                Doce de Leite 🍮
-            </div>
-            <div class="option" onclick="nextPage('ir embora')">
-                Nutella 🍫
-            </div>
-            <div class="option" onclick="nextPage('ir embora')">
-                Frutas 🍓
-            </div>
-        </div>
-        <p class="curiosity">Chegamos à sobremesa... Se for doce de leite, já me sinto melado de tanto carinho! "Você é mais doce que qualquer sobremesa, porque você me derrete por completo!" 🍮 Nutella é incrível, mas nem de longe se compara ao seu jeitinho que me deixa completamente apaixonado. "Eu não preciso de Nutella quando tenho você para adoçar meu dia!" 🍫 E frutas... Ah, frutas! Como você, sempre encantadora, sempre me fazendo querer mais. "Nada mais saudável e irresistível que você!" 🍓</p>
-    </div>
-
-    <div class="container" id="ir embora" style="display:none;">
-        <h1 class="header">Hora de Ir... Ou Melhor, Ficar!</h1>
-        <p class="curiosity">"Você tem um mapa? Porque me perdi nos seus olhos e não quero mais sair de lá." 🗺️ "A noite está acabando, mas sabe o que nunca vai terminar? O meu amor por você!" ❤️</p>
-        <button onclick="window.location.reload()">Voltar ao Início</button>
-    </div>
-
-    <script>
-        function nextPage(pageId) {
-            const pages = document.querySelectorAll('.container');
-            pages.forEach(page => page.style.display = 'none');
-            document.getElementById(pageId).style.display = 'block';
-        }
-    </script>
+  <footer>
+    © 2025 Gio’s - Todos os direitos reservados
+  </footer>
 
 </body>
 </html>
